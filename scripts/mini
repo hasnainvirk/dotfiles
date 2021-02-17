@@ -1,0 +1,24 @@
+#!/bin/bash -eu
+
+shopt -s nullglob
+
+PORTS=(/dev/ttyACM*)
+BAUDS=(9600 115200)
+
+if [ ${#PORTS[*]} -eq 0 ]; then
+	echo "No serial ports found"
+	exit 1
+fi
+
+select port in ${PORTS[*]};do break;done
+if [ -z "$port" ]; then
+    exit 1
+fi
+
+select baud in ${BAUDS[*]};do break;done
+if [ -z "$baud" ]; then
+    exit 1
+fi
+
+echo "Minicom $port @ $baud"
+minicom -D $port -b $baud --noinit

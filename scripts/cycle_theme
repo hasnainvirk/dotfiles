@@ -1,0 +1,37 @@
+#!/bin/bash
+
+THEMES=$(wal --theme | grep -v -- "- random" | sed -n 's/ - //p' |sort -u)
+
+FAVOURITES="
+sexy-monokai
+sexy-user-77-mashup-colors
+sexy-x-dotshare
+vscode
+base16-atelier-dune
+base16-atelier-savanna
+base16-bespin
+base16-classic
+base16-default
+base16-eighties
+base16-google
+base16-monokai
+base16-seti
+base16-solarflare
+base16-spacemacs
+base16-tomorrow-night
+base16-twilight
+base16-woodland
+sexy-hund
+sexy-hybrid
+"
+
+if [ "$1" == "-f" ]; then
+	THEMES=$FAVOURITES
+fi
+
+for theme in $THEMES;do
+	wal --theme $theme
+	echo "Pres ENTER to continue. CTRL-C to keep current theme"
+	read
+done
+

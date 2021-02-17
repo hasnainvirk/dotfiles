@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"cwd": "${workspaceRoot}",
+			"executable": "build/zephyr/zephyr.elf",
+			"name": "Debug Microcontroller",
+			"request": "launch",
+			"type": "cortex-debug",
+			"servertype": "jlink",
+			"device": "nRF9160_xxAA",
+			"armToolchainPath": "${env:HOME}/zephyr-sdk/arm-zephyr-eabi/bin",
+			"toolchainPrefix": "arm-zephyr-eabi",
+			"svdFile": "/home/seta/src/SVD/nrf9160.svd",
+		},
+	]
+}
