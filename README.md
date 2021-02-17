@@ -3,6 +3,7 @@ These are my personal dotfiles to setup a build env the way I want. This particu
 arrangement uses i3-gaps, polybar, zsh, p10k theme for zsh, vscode, prospect-mail, 
 chromium and many other tools to prepare a powerful workstation environment.
 
+**Special thanks to all the developers of the awesome tools that I am using.** 
 ## Initial step
 ```sh
 sudo apt update
