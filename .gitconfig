@@ -1,14 +1,31 @@
 [user]
+	email = hasnain@tinysio.com
 	name = Hasnain Virk
-	email = hasnain@hasnainvirk.tech
-[merge]
-	tool = p4mergetool
-[mergetool "p4mergetool"]
-	cmd = ~/.local/bin/p4merge $PWD/$BASE $PWD/REMOTE $PWD/$LOCAL $PWD/$MERGED
-	trustExitCode = false
-[mergetool]
-	keepBackup = false
+[credential]
+	helper = store
+[pull]
+	rebase = true
+[help]
+	format = html
+	browser = google-chrome
+[alias]
+	st = status -sb
+	co = checkout
+	ci = commit
+	br = branch
+	cp = cherry-pick
+	last = log -1 HEAD --stat
+	conf = config --global
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	pushf = push --force-with-lease
+	l = ll HEAD~20..
 [diff]
-	tool = p4mergetool
-[difftool "p4mergetool"]
-	cmd = "~/.local/bin/p4merge $LOCAL $REMOTE"
+	algorithm = patience
+[merge]
+	tool = meld
+[core]
+	pager = less -F -X
+[rebase]
+	autoSquash = true
+[color]
+	ui = always
